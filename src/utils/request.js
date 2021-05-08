@@ -3,6 +3,13 @@ import { MessageBox, Message } from 'element-ui'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
 
+/**
+ * 1-创建了一个新的axios实例
+ * 2-请求拦截器-主要用来处理token统一注入的问题
+ * 3-响应拦截器-主要用来处理后台返回 数据异常 和 数据结构 的问题
+ */
+
+/*
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
@@ -32,16 +39,6 @@ service.interceptors.request.use(
 
 // response interceptor
 service.interceptors.response.use(
-  /**
-   * If you want to get http information such as headers or status
-   * Please return  response => response
-  */
-
-  /**
-   * Determine the request status by custom code
-   * Here is just an example
-   * You can also judge the status by HTTP Status Code
-   */
   response => {
     const res = response.data
 
@@ -81,5 +78,8 @@ service.interceptors.response.use(
     return Promise.reject(error)
   }
 )
+*/
+
+const service = axios.create()
 
 export default service
